@@ -5,4 +5,7 @@ Rails.application.routes.draw do
   # ↑↑上の記述は削除しましょう↑↑
   root to: "messages#index"#ルートパスへのアクセスがあったら、messages_controllerのindexアクションが呼び出される
   resources :users, only: [:edit, :update]
+
+  resources :rooms, only: [:new, :create]
+  # 新規チャットルームの作成で動くアクションは「new」と「create」のみ
 end
