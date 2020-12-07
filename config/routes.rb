@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   root to: "rooms#index"
   resources :users, only: [:edit, :update]
 
-  resources :rooms, only: [:new, :create] do
+  resources :rooms, only: [:new, :create, :destroy] do
     resources :messages, only: [:index, :create]
     # ネストの基準は、その土台がなければ表記できないかどうか
     # messagesはroomsが無いと表記できないのでネストにする（LINEでいうトークルームとメッセージの関係。トークルームが無いとメッセージ送れないでしょ
